@@ -1,0 +1,11 @@
+<h2>Posts</h2>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= post.title %></li>
+    <li><%= embed(post.song_url) %></li>
+    <li><%= post.moment %></li>
+    <li><%= post.tags %>
+    <li>Ups: <%= post.ups %></li>
+    <% end %>
+</ul>

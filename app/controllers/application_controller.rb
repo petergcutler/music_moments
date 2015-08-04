@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
   def authenticate
     if !session[:user]
-      redirect_to "/sign_in"
+      redirect_to "/sign_up"
     end
   end
 end

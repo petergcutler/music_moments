@@ -2,7 +2,7 @@ class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
       t.string :title
-      t.created_at :datetime
+      t.timestamps null: false
       t.string :song_url
       t.string :moment
       t.string :tags, array: true, default: []
