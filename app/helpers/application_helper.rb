@@ -1,9 +1,9 @@
 module ApplicationHelper
   def embed(weburl)
-    if weburl.include? "youtube"
+    if weburl.include? "youtube.com"
       youtube_id = weburl.split("=").last
       content_tag(:iframe, nil, src: "//www.youtube.com/embed/#{youtube_id}")
-    elsif weburl.include? "soundcloud"
+    elsif weburl.include? "soundcloud.com"
       client = SoundCloud.new(:client_id => "76ebe5a5d650f447683103f01e00077c")
       track = client.get('/resolve', :url => weburl)
       @track_id = track.id

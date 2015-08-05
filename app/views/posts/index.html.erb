@@ -3,7 +3,7 @@
     <div class="title"><%= link_to(post.title, post_path(post)) %></div>
     <div class="posted_when">posted <%= time_ago_in_words(post.created_at)%> ago by <%=post.user.username %></div>
     <br>
-    <div class="youtube"><%= embed(post.song_url) %></div>
+    <div class="song"><%= embed(post.song_url) %></div>
     <br>
     <p><%= post.moment %></p>
     <br>
