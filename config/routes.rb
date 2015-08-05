@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :comments
     end
     root to: 'posts#index'
-    get 'tags/:tag', to: 'posts#index', as: :tag
+    get 'tags/:tag', to: 'posts#tagged', as: :tag
   get '/sign_in', to: 'users#sign_in'
   post '/sign_in', to: 'users#sign_in!'
   get '/sign_up', to: 'users#sign_up'
