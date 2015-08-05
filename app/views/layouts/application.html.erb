@@ -2,12 +2,30 @@
 <html>
 <head>
   <title>Music Moments</title>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div class="header">
+  <%= image_tag("musicnoteclock.jpg", height: "100px", width: "100px") %>
+  <h1>MUSIC MOMENTS</h1>
+  </div>
+  <div class="container">
+    <% if signed_in %>
+    <div><a href="/user/:id">Your Profile</a></div>
+    <div><a href="/sign_out">Sign out</a></div>
+    <% else %>
+    <div><a href="/sign_in">Sign in</a></div>
+    <div><a href="/sign_up">Sign up</a></div>
+    <% end %>
+    <div><a href="/posts">All Posts</a></div>
+    <div><a href="/posts/new">New Post</a></div>
+  </div>
+<h2><%= flash[:notice] %></h2>
 <%= yield %>
 
 </body>

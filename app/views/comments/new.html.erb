@@ -1,11 +1,12 @@
 <h2>New Comment for <%= @post.title %></h2>
 
 <%= form_for [@post, @comment] do |f| %>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= f.label :author, "Author:" %>
+  <%= f.text_field :author, :style => "width: 300px;"%>
+<br>
+<br>
+  <%= f.label :content, "Comment:"%>
+  <%= f.text_field :content, :style => "width: 300px; height: 100px"%>
 
   <%= f.submit %>
 <% end %>

@@ -1,18 +1,21 @@
-<h2><%= @post.title %> <%= link_to("(edit)", edit_post_path(@post)) %></h2>
+<div class="post">
+  <div class="title"><%=@post.title%></div>
+  <div class="posted_when">posted <%= time_ago_in_words(@post.created_at)%> ago by <%=@post.user.username %></div>
+  <br>
+  <div class="youtube"><%= embed(@post.song_url) %></div>
+  <br>
+  <p><%= @post.moment %></p>
+  <br>
 
-<ul>
-  <li><%= embed(@post.song_url) %></li>
-  <li><%= @post.moment %></li>
-</ul>
-
-
-<h3>Comments <%= link_to "(New)", new_post_comment_path(@post) %></h3>
-<ul>
-  <% @post.comments.each do |comment| %>
-  <li>
-    <%= comment.content %>
-    by <%= comment.author %>
-    posted <%= comment.created_at %>
-  </li>
-  <% end %>
-</ul>
+  <div class="comment_title">Comments <%= link_to "(New)", new_post_comment_path(@post) %></div>
+  <br>
+  <div class="comment">
+      <% @post.comments.each do |comment| %>
+        <div class="comment_content"><%= comment.content %></div>
+        <div class="comment_author">by <%= comment.author %></div>
+        <div class="comment_posted_when">posted <%= time_ago_in_words(comment.created_at)%> ago</div>
+      <% end %>
+  </div>
+  <br>
+  <div class="posted_when"><%=@post.created_at.strftime("Posted %b %d, %Y at %I:%M%p")%></div>
+</div>

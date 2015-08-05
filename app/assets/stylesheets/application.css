@@ -13,3 +13,72 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: #F0F0F0;
+  font-family: 'Work Sans', sans-serif;
+  }
+h1 {
+  display: inline-block;
+  font-size: 500%;
+  padding-left: 10%;
+  position: relative;
+  bottom: 10px;
+  }
+img {
+  padding-left: 5%;
+  display: inline-block;
+  border-radius: 2px;
+}
+.container > div {
+    display: inline-block;
+    display: -moz-inline-box;
+    *display: inline; /* For IE7 */
+    zoom: 1; /* Trigger hasLayout */
+    width: 23%;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+}
+.post {
+  margin: auto;
+  width: 50%;
+  font-family: 'Karla', sans-serif;
+  border: solid #000;
+  border-width:1px;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #FFFFE6;
+}
+.title {
+  text-align: center;
+}
+.posted_when {
+  font-size: 10px;
+  text-align: center;
+}
+.youtube {
+  margin: 0 auto;
+}
+p {
+  font-family: 'Droid Serif', serif;
+  font-size: 14px;
+}
+.comment {
+  border: solid #000;
+  border-width:1px;
+  border-radius: 3px;
+  background-color: #E6E6FF;
+}
+.comment_title {
+  text-align: center;
+}
+.comment_content {
+  font-weight: bold;
+  font-size: 12px;
+}
+.comment_author {
+  font-size: 10px;
+}
+.comment_posted_when {
+  font-size: 8px;
+}
