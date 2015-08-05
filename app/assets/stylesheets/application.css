@@ -19,7 +19,7 @@ body {
   }
 h1 {
   display: inline-block;
-  font-size: 500%;
+  font-size: 300%;
   padding-left: 10%;
   position: relative;
   bottom: 10px;
@@ -82,3 +82,7 @@ p {
 .comment_posted_when {
   font-size: 8px;
 }
+.css1 { font-size: 1.0em; }
+.css2 { font-size: 1.2em; }
+.css3 { font-size: 1.4em; }
+.css4 { font-size: 1.6em; }

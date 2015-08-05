@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# gem 'acts-as-taggable-on'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 
 gem 'bcrypt'

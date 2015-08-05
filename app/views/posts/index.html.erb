@@ -7,7 +7,13 @@
     <br>
     <p><%= post.moment %></p>
     <br>
-
+    Tags:
+    <% post.tags.any? %>
+     <% post.tags.each do |tag| %>
+     <span class="label label-teal">
+        <%= link_to tag.name, tag_path(tag.name) %>
+     </span>
+     <% end %>
     <div class="comment_title">Comments <%= link_to "(New)", new_post_comment_path(post) %></div>
     <br>
     <div class="comment">
