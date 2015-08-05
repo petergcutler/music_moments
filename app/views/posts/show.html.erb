@@ -13,6 +13,9 @@
       <%= link_to tag.name, tag_path(tag.name) %>
    </span>
    <% end %>
+   <%= link_to "Upvote", like_post_path(@post), method: :put %>
+   <%= link_to "Downvote", dislike_post_path(@post), method: :put %>
+   Votes: <%= @post.get_upvotes.size %>
 
 
   <div class="comment_title">Comments <%= link_to "(New)", new_post_comment_path(@post) %></div>

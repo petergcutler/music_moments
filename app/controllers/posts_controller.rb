@@ -1,7 +1,21 @@
 class PostsController < ApplicationController
   # index
   def index
-    @posts = Post.all
+    @posts = Post.all.reverse_order
+  end
+
+  def upvote
+    @post = Post.find(params[:id])
+    @user = User.find(session[:user]["id"])
+    @post.liked_by @user
+    redirect_to @post
+  end
+
+  def downvote
+    @post = Post.find(params[:id])
+    @user = User.find(session[:user]["id"])
+    @post.downvote_from @user
+    redirect_to @post
   end
 
   def tagged
