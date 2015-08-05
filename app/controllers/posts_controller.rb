@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   # index
   def index
     @posts = Post.all
-    # @posts = User.find(session[:user]["id"]).posts
   end
 
   # new

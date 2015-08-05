@@ -1,0 +1,14 @@
+<%= form_for @post do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :song_url %>
+  <%= f.text_field :song_url %>
+
+  <%= f.label :moment %>
+  <%= f.text_field :moment %>
+
+  <%= f.submit %>
+
+<% end %>

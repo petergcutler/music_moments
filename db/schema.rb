@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803150849) do
+ActiveRecord::Schema.define(version: 20150803150838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,24 +26,12 @@ ActiveRecord::Schema.define(version: 20150803150849) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
 
-  create_table "playlists", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "songs",      default: [],              array: true
-    t.integer  "user_id"
-  end
-
-  add_index "playlists", ["user_id"], name: "index_playlists_on_user_id", using: :btree
-
   create_table "posts", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "song_url"
     t.string   "moment"
-    t.string   "tags",       default: [],              array: true
-    t.integer  "ups"
     t.integer  "user_id"
   end
 
@@ -57,6 +45,5 @@ ActiveRecord::Schema.define(version: 20150803150849) do
   end
 
   add_foreign_key "comments", "posts"
-  add_foreign_key "playlists", "users"
   add_foreign_key "posts", "users"
 end

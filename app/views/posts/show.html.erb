@@ -1,0 +1,18 @@
+<h2><%= @post.title %> <%= link_to("(edit)", edit_post_path(@post)) %></h2>
+
+<ul>
+  <li><%= embed(@post.song_url) %></li>
+  <li><%= @post.moment %></li>
+</ul>
+
+
+<h3>Comments <%= link_to "(New)", new_post_comment_path(@post) %></h3>
+<ul>
+  <% @post.comments.each do |comment| %>
+  <li>
+    <%= comment.content %>
+    by <%= comment.author %>
+    posted <%= comment.created_at %>
+  </li>
+  <% end %>
+</ul>

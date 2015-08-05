@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# gem 'acts-as-taggable-on'
+
+
 gem 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
