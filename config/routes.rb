@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/sign_up', to: 'users#sign_up'
   post '/sign_up', to: 'users#sign_up!'
   get '/sign_out', to: 'users#sign_out!'
+  root to: 'posts#index'
 end

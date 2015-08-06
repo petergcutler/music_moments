@@ -23,19 +23,19 @@
     <div class="col-md-4"><a href="/posts">all posts</a></div>
       <% if signed_in %>
     <div class="col-md-4"><a href="/posts/new">new</a></div>
-    <div class="col-md-4"><a href="/sign_out">sign out</a></div>
+    <div class="col-md-4"><a href="/sign_out"><%= session[:user]["username"] %>: sign out</a></div>
       <% else %>
     <div class="col-md-4"><a href="/sign_in">sign in</a></div>
     <div class="col-md-4"><a href="/sign_up">sign up</a></div>
       <% end %>
   </div>
-<h2><%= flash[:notice] %></h2>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2">
-      <a href="/posts">Most Recent</a><br>
-      <a href="/mostcommented">Most Commented</a><br>
-      <a href="/mostliked">Most Liked</a>
+      most<br>
+      <a href="/posts">recent</a><br>
+      <a href="/mostcommented">commented</a><br>
+      <a href="/mostliked">liked</a>
     </div>
     <div class="col-md-8"><%= yield %></div>
     <div class="col-md-2"><% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
