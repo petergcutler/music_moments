@@ -52,6 +52,10 @@ h1 {
   background-color: #FFFFE6;
   padding: 5px;
 }
+.youtube-player {
+  display: block; margin: 0 auto;
+}
+
 .title {
   text-align: center;
 }
