@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate
+  before_action :tag_cloud
 
   private
   def authenticate
@@ -10,4 +11,9 @@ class ApplicationController < ActionController::Base
       redirect_to "/sign_up"
     end
   end
+
+  def tag_cloud
+    @tags = Post.tag_counts_on(:tags)
+  end
+
 end

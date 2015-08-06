@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>Music Moments</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
@@ -10,22 +13,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="header">
-  <%= image_tag("musicnoteclock.jpg", height: "100px", width: "100px") %>
-  <h1>MUSIC MOMENTS</h1>
+  <div class="container-fluid">
+   <div class="row" class="imgfix">
+	  <img src="https://unsplash.it/1400/100?image=56" class="img-responsive">
+   </div>
   </div>
-  <div class="container">
-    <% if signed_in %>
-    <div><a href="/user/:id">Your Profile</a></div>
-    <div><a href="/sign_out">Sign out</a></div>
-    <% else %>
-    <div><a href="/sign_in">Sign in</a></div>
-    <div><a href="/sign_up">Sign up</a></div>
-    <% end %>
-    <div><a href="/posts">All Posts</a></div>
-    <div><a href="/posts/new">New Post</a></div>
+  <h1 class="text-center">MUSIC MOMENTS</h1>
+  <div class="row menu">
+    <div class="col-md-4"><a href="/posts">all posts</a></div>
+      <% if signed_in %>
+    <div class="col-md-4"><a href="/posts/new">new</a></div>
+    <div class="col-md-4"><a href="/user/:id">profile</a></div>
+      <% else %>
+    <div class="col-md-4"><a href="/sign_in">sign in</a></div>
+    <div class="col-md-4"><a href="/sign_up">sign up</a></div>
+      <% end %>
   </div>
 <h2><%= flash[:notice] %></h2>
-<%= yield %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">Sort Posts by:<br>Most Recent<br>Comments<br>Likes</div>
+    <div class="col-md-8"><%= yield %></div>
+    <div class="col-md-2"><% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+  <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
+<% end %></div>
+  </div>
+</div>
 </body>
 </html>

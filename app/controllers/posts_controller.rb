@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  def tag_cloud
+    @tags = Post.tag_counts_on(:tags)
+  end
+
   # index
   def index
     @posts = Post.all.reverse_order

@@ -13,22 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
 body {
   background-color: #F0F0F0;
   font-family: 'Work Sans', sans-serif;
   }
-h1 {
-  display: inline-block;
-  font-size: 300%;
-  padding-left: 10%;
-  position: relative;
-  bottom: 10px;
+body > .container{
+  padding-bottom: -60px;
   }
-img {
-  padding-left: 5%;
-  display: inline-block;
-  border-radius: 2px;
+.col-md-4 {
+  text-align: center;
+  position: relative;
+  bottom: 60px;
 }
+.menu div{
+  background-color: #F5FFFF;
+}
+h1 {
+  color: #F8F8F8;
+  font-size: 300%;
+  position: relative;
+  bottom: 80px;
+  font-weight: bold;
+  }
 .container > div {
     display: inline-block;
     display: -moz-inline-box;
@@ -40,14 +47,10 @@ img {
     bottom: 20px;
 }
 .post {
-  margin: auto;
-  width: 50%;
   font-family: 'Karla', sans-serif;
-  border: solid #000;
-  border-width:1px;
   border-radius: 10px;
-  padding: 20px;
   background-color: #FFFFE6;
+  padding: 5px;
 }
 .title {
   text-align: center;
@@ -55,9 +58,6 @@ img {
 .posted_when {
   font-size: 10px;
   text-align: center;
-}
-.song {
-  margin: 0 auto;
 }
 p {
   font-family: 'Droid Serif', serif;
