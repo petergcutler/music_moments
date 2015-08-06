@@ -28,5 +28,5 @@
       <% end %>
   </div>
   <br>
-  <div class="posted_when"><%=@post.created_at.strftime("Posted %b %d, %Y at %I:%M%p")%> <%=link_to "view post", post_path(@post)%></div>
+  <div class="posted_when"><%=@post.created_at.strftime("Posted %b %d, %Y at %I:%M%p")%> <%=link_to "view post", post_path(@post)%> <%=link_to "edit post", edit_post_path(@post)%></div>
 </div>
