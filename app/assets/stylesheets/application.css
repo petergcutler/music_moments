@@ -64,8 +64,7 @@ p {
   font-size: 14px;
 }
 .comment {
-  border: solid #000;
-  border-width:1px;
+  padding: 5px;
   border-radius: 3px;
   background-color: #E6E6FF;
 }

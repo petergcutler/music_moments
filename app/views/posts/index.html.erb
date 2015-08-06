@@ -21,13 +21,13 @@
    </div><br>
     <div class="comment_title">comments <%= link_to "(new)", new_post_comment_path(post) %></div>
     <br>
-    <div class="comment">
         <% post.comments.each do |comment| %>
+        <div class="comment">
           <div class="comment_content"><%= comment.content %></div>
           <div class="comment_author">by <%= comment.author %></div>
           <div class="comment_posted_when">posted <%= time_ago_in_words(comment.created_at)%> ago</div>
-        <% end %>
     </div>
+        <% end %>
     <br>
     <div class="posted_when"><%=post.created_at.strftime("Posted %b %d, %Y at %I:%M%p")%> <%=link_to "view post", post_path(post)%></div>
 </div>
