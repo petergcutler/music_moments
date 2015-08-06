@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     end
     resources :comments
     end
+  get '/mostcommented', to: 'posts#mostcommented'
+  get '/mostliked', to: 'posts#mostliked'
   get 'tags/:tag', to: 'posts#tagged', as: :tag
   get '/sign_in', to: 'users#sign_in'
   post '/sign_in', to: 'users#sign_in!'

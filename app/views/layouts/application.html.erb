@@ -33,10 +33,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2">
-      Sort Posts by:<br>
       <a href="/posts">Most Recent</a><br>
-      <a href="/posts/mostcommented">Most Commented</a><br>
-      <a href="/posts/mostliked">Most Liked</a>
+      <a href="/mostcommented">Most Commented</a><br>
+      <a href="/mostliked">Most Liked</a>
     </div>
     <div class="col-md-8"><%= yield %></div>
     <div class="col-md-2"><% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>

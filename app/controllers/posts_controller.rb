@@ -4,6 +4,14 @@ class PostsController < ApplicationController
     @posts = Post.all.reverse_order
   end
 
+  def mostcommented
+    @posts = Post.order("comments_count, created_at DESC").reverse_order
+  end
+
+  def mostliked
+    @posts = Post.order("cached_votes_score DESC")
+  end
+
   def upvote
     @post = Post.find(params[:id])
     @user = User.find(session[:user]["id"])
