@@ -1,22 +1,22 @@
 <div class="container"><%= form_for @post do |f| %>
   <div class="row">
     <div class=".col-md-3"><%= f.label :title, "Title:" %></div>
-    <div class=".col-md-5"><%= f.text_field :title, :style => "width: 300px;" %></div>
+    <div class=".col-md-5"><%= f.text_field :title, :style => "width: 400px;" %></div>
   </div>
     <br><br>
   <div class="row">
     <div class=".col-md-3"><%= f.label :song_url, "Song URL:" %></div>
-    <div class=".col-md-5"><%= f.text_field :song_url, :style => "width: 300px;" %></div>
+    <div class=".col-md-5"><%= f.text_field :song_url, :style => "width: 400px;" %></div>
   </div>
     <br><br>
   <div class="row">
-    <div class=".col-md-3"><%= f.label :moment, "Moment:" %>></div>
+    <div class=".col-md-3"><%= f.label :moment, "Moment:" %></div>
     <div class=".col-md-5"><%= f.text_field :moment, :style => "width: 400px; height: 200px"%></div>
   </div>
 <br><br>
 <div class="row form-group">
     <div class=".col-md-3"><%= f.label :tags, "Tags (separated by commas)" %></div>
-    <div class=".col-md-5"><%= f.text_field :tag_list, class: "form-control" %></div>
+    <div class=".col-md-5"><%= f.text_field :tag_list, class: "form-control", :style => "width: 400px" %></div>
 </div>
   <%= f.submit %>
 <% end %>
