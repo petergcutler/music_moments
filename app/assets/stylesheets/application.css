@@ -52,7 +52,19 @@ h1 {
   background-color: #FFFFE6;
   padding: 5px;
 }
-
+p {
+  font-family: 'Karla', sans-serif;
+}
+.sort {
+  border-radius: 10px;
+  background-color: #CCFFCC;
+  padding: 5px;
+}
+.tag-cloud {
+  border-radius: 10px;
+  background-color: #FAF0F5;
+  padding: 5px;
+}
 .title {
   text-align: center;
 }
@@ -60,10 +72,7 @@ h1 {
   font-size: 10px;
   text-align: center;
 }
-p {
-  font-family: 'Droid Serif', serif;
-  font-size: 14px;
-}
+
 .comment {
   padding: 5px;
   border-radius: 3px;

@@ -19,13 +19,6 @@ class PostsController < ApplicationController
     redirect_to @post
   end
 
-  def downvote
-    @post = Post.find(params[:id])
-    @user = User.find(session[:user]["id"])
-    @post.downvote_from @user
-    redirect_to @post
-  end
-
   def tagged
     if params[:tag].present?
       @posts = Post.tagged_with(params[:tag])
@@ -33,6 +26,7 @@ class PostsController < ApplicationController
       @posts = Post.postall
     end
   end
+
   # new
   def new
     @post = Post.new

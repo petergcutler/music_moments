@@ -3,15 +3,14 @@
 <head>
   <title>Music Moments</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
   <div class="container-fluid">
    <div class="row" class="imgfix">
@@ -19,6 +18,7 @@
    </div>
   </div>
   <h1 class="text-center">MUSIC MOMENTS</h1>
+
   <div class="row menu">
     <div class="col-md-4"><a href="/posts">all posts</a></div>
       <% if signed_in %>
@@ -29,19 +29,24 @@
     <div class="col-md-4"><a href="/sign_up">sign up</a></div>
       <% end %>
   </div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2">
-      most<br>
-      <a href="/posts">recent</a><br>
-      <a href="/mostcommented">commented</a><br>
-      <a href="/mostliked">liked</a>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-2 sort">
+        <p>sort by</p>
+        <a href="/posts">recent</a><br>
+        <a href="/mostcommented">commented</a><br>
+        <a href="/mostliked">liked</a>
+      </div>
+
+      <div class="col-md-8"><%= yield %></div>
+      <div class="col-md-2 tag-cloud"><% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
+  <% end %></div>
     </div>
-    <div class="col-md-8"><%= yield %></div>
-    <div class="col-md-2"><% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
-<% end %></div>
   </div>
-</div>
+
 </body>
+
 </html>
